@@ -3,6 +3,10 @@ title: Contact Information
 layout: base.njk
 ---
 
-To contact Elder Davis, you can email him at [gehrig.davis@missionary.org](mailto:gehrig.davis@missionary.org)
+## Elder Davis
 
-To contact the Dustin (his dad) about the website, email me at [dustin@davis.im](mailto:dustin@davis.im)
+To contact Elder Davis, you can email him at [gehrig.davis@missionary.org](mailto:gehrig.davis@missionary.org).
+
+## Dustin (his dad)
+
+To contact Dustin about the website, email him at [dustin@davis.im](mailto:dustin@davis.im).
