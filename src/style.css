@@ -1,98 +1,43 @@
-/* Reset some default styles and apply a blue-ish gray theme */
-body,
-h1,
-h2,
-p {
-  margin: 0;
-  padding: 0;
+section.content p {
+  margin-bottom: 1rem;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f5f9;
+section.content h1 {
+  margin: 1.5rem 0;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-header {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+section.content h2 {
+  margin: 1.4rem 0;
+  font-weight: bold;
+  font-size: 1.7rem;
 }
 
-h1 {
-  font-size: 24px;
+section.content h3 {
+  margin: 1.3rem 0;
+  font-weight: bold;
 }
 
-h1 a {
-  color: #fff;
-  text-decoration: none;
+section.content ol {
+  list-style-type: decimal;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 
-nav button.hamburger {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: #ecf0f1;
-  cursor: pointer;
-  display: none; /* Hide the hamburger menu by default */
-}
-
-main {
-  display: flex; /* Use flexbox to position side menu and content side by side */
-}
-
-aside.side-menu {
-  background-color: #34495e;
-  color: #ecf0f1;
-  width: 250px;
-  height: 100%;
-  transition: left 0.3s ease-in-out;
-}
-
-/* Adjust the width and styles of your content */
-section.content {
-  flex-grow: 1; /* Allow the content to grow and fill the remaining space */
-  margin: 2em;
-}
-
-ul {
+section.content ol.relative {
   list-style-type: none;
-  padding: 0;
+  margin-left: 0;
+  margin-bottom: 0;
 }
 
-li {
-  padding: 10px;
-  text-align: center;
+section.content ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 
-li a {
-  text-decoration: none;
-  color: #ecf0f1;
-  display: block;
-  font-size: 18px;
-}
-
-footer {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  text-align: center;
-  padding: 10px 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-/* Media Query for mobile devices */
-@media screen and (max-width: 768px) {
-  /* Show the hamburger button on mobile devices */
-  nav button.hamburger {
-    display: block;
-  }
-
-  /* Hide the side menu off-screen on mobile devices */
-  aside.side-menu {
-    left: -250px;
-  }
+section.content a {
+  text-decoration: underline dotted;
+  color: rgb(0, 174, 255);
 }
