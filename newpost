@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function promptForDateAndTitle() {
+  return new Promise((resolve) => {
+    rl.question('Please enter the date (YYYY-MM-DD): ', (date) => {
+      rl.question('Please enter the title of the post: ', (title) => {
+        resolve({ date, title });
+        rl.close();
+      });
+    });
+  });
+}
+
+// Function to generate a slug from the title
+function generateSlug(title) {
+  return title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+}
+
+async function createNewPost(date, title) {
+  if (!date || !title) {
+    const { date: inputDate, title: inputTitle } = await promptForDateAndTitle();
+    date = inputDate;
+    title = inputTitle;
+  }
+
+  const slug = generateSlug(title);
+  const filename = `${date}-${slug}.md`;
+  const content = `---
+tags: posts
+layout: base.njk
+permalink: ${slug}
+date: ${date}
+title: ${title}
+description:
+youtube_id:
+---
+
+Content
+`;
+
+  fs.writeFile(`./src/posts/${filename}`, content, (err) => {
+    if (err) {
+      console.error('Error creating new post:', err);
+    } else {
+      console.log(`New post created: ./src/posts/${filename}`);
+    }
+  });
+}
+
+const [date, title] = process.argv.slice(2);
+createNewPost(date, title);

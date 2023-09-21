@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="/">Gehrig Davis</a>
+      </h1>
+      <nav>
+        <button id="menu-toggle" class="hamburger">&#9776;</button>
+      </nav>
+    </header>
+
+    <main>
+      <aside class="side-menu">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Videos</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </aside>
+
+      <section class="content">
+        {% if youtube_id %}
+          <iframe width="100%" height="800px" src="https://www.youtube.com/embed/{{ youtube_id }}" title="{{ title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        {% endif %}
+
+        {{ content | safe }}</section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Gehrig Davis</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
