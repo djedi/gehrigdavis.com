@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source .env
+
+echo "🟣 Building website..."
+npm run build
+
+echo "🟣 Deploying website..."
+rsync -avz -e "ssh" --delete ./dist/ $PROD_USERNAME@$PROD_SERVER:~/public_html/
+

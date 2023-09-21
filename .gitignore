@@ -1,3 +1,4 @@
+/.env
+/design-prompt.md
 /dist
 /node_modules
-/design-prompt.md

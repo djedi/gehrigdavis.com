@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   // Copy static assets (like images, CSS, etc.) to the output directory
   eleventyConfig.addPassthroughCopy("src/style.css");
   eleventyConfig.addPassthroughCopy("src/script.js");
+  eleventyConfig.addPassthroughCopy("src/.htaccess");
 
   // Set the template engine to Nunjucks (you can use other templating engines like Liquid, Handlebars, etc.)
   eleventyConfig.setTemplateFormats(["njk", "md", "html"]);
